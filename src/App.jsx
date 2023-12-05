@@ -1,12 +1,11 @@
+import { useState } from 'react';
 import './App.css'
+import LoginPage from './components/pages/LoginPage';
+
 
 function App() {
 
-  return (
-    <div>
-
-    </div>
-  )
+  return <LoginPage />;
 }
 
 export default App
