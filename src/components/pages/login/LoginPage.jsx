@@ -17,17 +17,8 @@ const LoginPageStyled = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
-    background: url("public/images/F03 burger-and-fries-background.jpg"), rgba(0, 0, 0, 0.7);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0, 0, 0, 0.7)),url("public/images/F03 burger-and-fries-background.jpg");
     background-size: cover;
     background-position: center;
-    background-blend-mode: darken;
-        
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
 `;
 
