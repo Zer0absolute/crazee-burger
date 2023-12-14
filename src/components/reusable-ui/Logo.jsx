@@ -1,13 +1,33 @@
 import styled from "styled-components";
+import { theme } from "../../theme";
 
 export default function Logo() {
     return (
         <LogoStyled>
-            LOGO CRAZEE BURGER
+            <h1>CRAZEE</h1>
+            <div className="img-container">
+                <img src="public/images/F03 logo-burger-orange.png" alt="Logo Burger" />
+            </div>
+            <h1>BURGER</h1>
         </LogoStyled>
     )
 }
 
 const LogoStyled = styled.div`
-    background-color: blue;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: ${theme.colors.primary};
+        font-size: 6.875rem;
+        letter-spacing: 0.0938rem;
+        text-transform: uppercase;
+    }
+
+    .img-container img{ 
+        width: 200px;
+        height: 150px;
+        flex-shrink: 0;
+    }
 `;
