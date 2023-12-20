@@ -5,6 +5,7 @@ import { theme } from '../../../theme'
 import { BsPersonCircle } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
 import TextInput from '../../reusable-ui/TextInput';
+import PrimaryButton from '../../reusable-ui/PrimaryButton';
 
 export default function LoginForm() {
     
@@ -36,10 +37,10 @@ export default function LoginForm() {
                     Icon={<BsPersonCircle className='Icon'/>}
                     required 
                 />
-                <button>
-                    <span>Accéder à mon espace</span>
-                    <IoIosArrowForward className='Icon'/> 
-                </button>
+                <PrimaryButton 
+                    label={"Accéder à mon espace"}
+                    Icon={<IoIosArrowForward className='icon-button'/>}
+                />
             </div>
         </LoginFormStyled>
     )
@@ -49,6 +50,7 @@ const LoginFormStyled = styled.form`
     justify-content: center;
     align-items: center;
     color: ${theme.colors.white};
+    width: 400px;
 
     h1, h2 { 
         font-family: Amatic SC;
@@ -72,41 +74,15 @@ const LoginFormStyled = styled.form`
         line-height: 46px;
         margin: 20px 10px 10px;
     }
-    
+
     .form-container { 
         display: flex;
         flex-direction: column;
         gap: 12.8px;
-        width: 400px;
-        
-        button { 
-            width: 100%;
-            height: 55px;
-            border-radius: ${theme.borderRadius.round};
-            border: transparent;
-            background-color: ${theme.colors.primary_burger};
-            color: ${theme.colors.white};
-            cursor: pointer;
-            
-            &:hover {
-                background: ${theme.colors.white};
-                color: ${theme.colors.primary_burger};
-                border: 1px solid ${theme.colors.primary_burger};
-            }
 
-            &:focus-visible {
-                outline: none;
-            }
-
-            &:focus {
-                background-color: ${theme.colors.primary_burger};
-                color: ${theme.colors.white};
-            }
-            
-            .Icon { 
-                margin-left: 10px;
-                margin-bottom: -3.5px;
-            }
+        .icon-button { 
+            margin-left: 10px;
+            margin-bottom: -3.5px;
         }
     }
 `;
