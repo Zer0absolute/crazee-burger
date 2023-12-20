@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { theme } from '../../../theme'
 import { BsPersonCircle } from "react-icons/bs";
 import { IoIosArrowForward } from "react-icons/io";
+import TextInput from '../../reusable-ui/TextInput';
 
 export default function LoginForm() {
     
@@ -28,19 +29,16 @@ export default function LoginForm() {
                 <h2>Connectez-vous</h2>
             </div>
             <div className='form-container'>
-                <div className='input-container'>
-                    <input
-                        value={inputValue}
-                        onChange={handleChange}
-                        type="text"
-                        placeholder='Entrez votre prénom'
-                        required 
-                    />
-                    <BsPersonCircle />
-                </div>
+                <TextInput 
+                    value={inputValue} 
+                    onChange={handleChange} 
+                    placeholder={'Entrez votre prénom'}
+                    Icon={<BsPersonCircle className='Icon'/>}
+                    required 
+                />
                 <button>
-                    Accéder à mon espace
-                    <IoIosArrowForward />
+                    <span>Accéder à mon espace</span>
+                    <IoIosArrowForward className='Icon'/> 
                 </button>
             </div>
         </LoginFormStyled>
@@ -63,53 +61,23 @@ const LoginFormStyled = styled.form`
         line-height: 61px;
     }
 
-    h2 {
-        font-size: ${theme.fonts.P4};
-        line-height: 46px;
-    }
-
     hr { 
         width: 100%;
         border: 1px solid #F56A2C;
+        margin-bottom: 40px;
     }
 
-    
+    h2 {
+        font-size: ${theme.fonts.P4};
+        line-height: 46px;
+        margin: 20px 10px 10px;
+    }
     
     .form-container { 
         display: flex;
         flex-direction: column;
         gap: 12.8px;
         width: 400px;
-        
-        .input-container {
-            width: 100%;
-            position: relative;
-
-            input { 
-                width:  100%;
-                height: 55px;
-                border-radius: ${theme.borderRadius.round};
-                border: transparent;
-                color: ${theme.colors.dark};
-                padding: 18px 24px 18px 52px;
-                
-
-                &:focus-visible {
-                    outline: none;
-                }
-
-                &::placeholder { 
-                    color:#D3D3D3;
-                }
-            }
-
-            svg {
-                position: absolute;
-                color: #747B91;
-                left: 24px;
-                bottom: 20px;
-            }
-        }
         
         button { 
             width: 100%;
@@ -118,18 +86,27 @@ const LoginFormStyled = styled.form`
             border: transparent;
             background-color: ${theme.colors.primary_burger};
             color: ${theme.colors.white};
+            cursor: pointer;
             
             &:hover {
                 background: ${theme.colors.white};
                 color: ${theme.colors.primary_burger};
                 border: 1px solid ${theme.colors.primary_burger};
             }
+
+            &:focus-visible {
+                outline: none;
+            }
+
+            &:focus {
+                background-color: ${theme.colors.primary_burger};
+                color: ${theme.colors.white};
+            }
             
-            svg { 
+            .Icon { 
                 margin-left: 10px;
                 margin-bottom: -3.5px;
             }
         }
     }
-    
 `;
