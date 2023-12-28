@@ -3,7 +3,10 @@ import { theme } from "../../../theme";
 
 export default function Main() {
     return (
-        <MainStyled></MainStyled>
+        <MainStyled>
+            <div className="basket">basket</div>
+            <div className="menu">menu</div>
+        </MainStyled>
     )
 }
 
@@ -13,4 +16,14 @@ const MainStyled = styled.div`
     flex: 1;
     border-bottom-left-radius: ${theme.borderRadius.extraRound};
     border-bottom-right-radius: ${theme.borderRadius.extraRound};
+    display: grid;
+    grid-template-columns: 25% 1fr;
+
+    .basket {
+        background: pink;
+    }
+
+    .menu {
+        background: violet;
+    }
 `;
