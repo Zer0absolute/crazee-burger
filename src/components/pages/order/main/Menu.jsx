@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
 import { theme } from '../../../../theme';
-import Card from '../../../reusable-ui/Card';
+import Card from '../../../reusable-ui/Card/Card';
 import { formatPrice } from "../../../../utils/maths"
 
 export default function Menu() {
