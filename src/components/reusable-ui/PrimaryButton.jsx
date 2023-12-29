@@ -23,6 +23,7 @@ const PrimaryButtonStyled = styled.button`
         background: ${theme.colors.white};
         color: ${theme.colors.primary_burger};
         border: 1px solid ${theme.colors.primary_burger};
+        transition: background 0.4s ease;
     }
     
     &:focus-visible {
