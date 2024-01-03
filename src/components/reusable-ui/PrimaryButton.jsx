@@ -3,7 +3,7 @@ import { theme } from "../../theme";
 
 export default function PrimaryButton({ label, Icon}) {
     return (
-        <PrimaryButtonStyled>
+        <PrimaryButtonStyled >
             <span>{label}</span>
             {Icon && Icon}
         </PrimaryButtonStyled>
@@ -12,7 +12,7 @@ export default function PrimaryButton({ label, Icon}) {
 
 const PrimaryButtonStyled = styled.button`
     width: 100%;
-    height: 55px;
+    height: 100%;
     border-radius: ${theme.borderRadius.round};
     border: transparent;
     background-color: ${theme.colors.primary_burger};
@@ -23,6 +23,7 @@ const PrimaryButtonStyled = styled.button`
         background: ${theme.colors.white};
         color: ${theme.colors.primary_burger};
         border: 1px solid ${theme.colors.primary_burger};
+        transition: background 0.4s ease;
     }
     
     &:focus-visible {

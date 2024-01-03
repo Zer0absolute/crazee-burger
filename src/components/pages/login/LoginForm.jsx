@@ -37,10 +37,12 @@ export default function LoginForm() {
                     Icon={<BsPersonCircle className='Icon'/>}
                     required 
                 />
-                <PrimaryButton 
-                    label={"Accéder à mon espace"}
-                    Icon={<IoIosArrowForward className='icon-button'/>}
-                />
+                <div className="primary-button">
+                    <PrimaryButton
+                        label={"Accéder à mon espace"}
+                        Icon={<IoIosArrowForward className='icon-button'/>}
+                    />
+                </div>
             </div>
         </LoginFormStyled>
     )
@@ -83,6 +85,10 @@ const LoginFormStyled = styled.form`
         .icon-button { 
             margin-left: 10px;
             margin-bottom: -3.5px;
+        }
+        .primary-button {
+            width: 400px;
+            height: 55px;
         }
     }
 `;
