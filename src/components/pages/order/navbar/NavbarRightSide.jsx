@@ -6,7 +6,10 @@ export default function NavbarRightSide({ username }) {
     return (
         <NavbarRightSideStyled>
             <div className="admin-button">
-                <ToggleButton />
+                <ToggleButton 
+                    labelIfChecked="DÉSACTIVER LE MODE ADMIN" 
+                    labelIfUnchecked="ACTIVER LE MODE ADMIN"
+                />
             </div>
             <Profile username={username}/>
         </NavbarRightSideStyled>
