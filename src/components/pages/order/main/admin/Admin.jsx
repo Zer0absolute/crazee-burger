@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import AdminTabs from "./AdminTabs";
+import AdminPanel from "./AdminPanel";
 
 export default function Admin() {
     
     return (
         <AdminStyled>
-            admin
+            <AdminTabs />
+            <AdminPanel />
         </AdminStyled>
     )
 }
@@ -12,8 +15,6 @@ export default function Admin() {
 const AdminStyled = styled.div`
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 250px;
-    background: red;
+    bottom: 0px;
     position: absolute;
 `;
