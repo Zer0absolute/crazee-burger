@@ -15,14 +15,14 @@ const PrimaryButtonStyled = styled.button`
     height: 100%;
     border-radius: ${theme.borderRadius.round};
     border: transparent;
-    background-color: ${theme.colors.primary_burger};
+    background-color: ${theme.colors.primary};
     color: ${theme.colors.white};
     cursor: pointer;
     
     &:hover {
         background: ${theme.colors.white};
-        color: ${theme.colors.primary_burger};
-        border: 1px solid ${theme.colors.primary_burger};
+        color: ${theme.colors.primary};
+        border: 1px solid ${theme.colors.primary};
         transition: background 0.4s ease;
     }
     
@@ -31,7 +31,7 @@ const PrimaryButtonStyled = styled.button`
     }
 
     &:focus {
-        background-color: ${theme.colors.primary_burger};
+        background-color: ${theme.colors.primary};
         color: ${theme.colors.white};
     }
 `;

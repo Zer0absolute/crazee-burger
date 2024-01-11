@@ -57,7 +57,7 @@ const LoginFormStyled = styled.form`
     h1, h2 { 
         font-family: Amatic SC;
         text-align: center;
-        font-weight: ${theme.weights.bold}
+        font-weight: ${theme.fonts.weights.bold}
     }
 
     h1 {

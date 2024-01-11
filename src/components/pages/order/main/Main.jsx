@@ -26,7 +26,7 @@ const MainStyled = styled.div`
     /* This code will be use for Basket */
     /* grid-template-columns: 25% 1fr; */
     background: ${theme.colors.background_white};
-    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;
+    box-shadow: ${theme.shadows.strong};
     border-bottom-left-radius: ${theme.borderRadius.extraRound};
     border-bottom-right-radius: ${theme.borderRadius.extraRound};
 
