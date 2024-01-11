@@ -7,12 +7,7 @@ import { AdminContext } from "../../../../../context/AdminContext";
 import { getTabsConfig } from "./getTabsConfig";
 
 export default function AdminTabs() {
-    const { 
-        isCollapsed, 
-        setIsCollapsed, 
-        currentTabSelected,
-        setCurrentTabSelected
-    } = useContext(AdminContext)
+    const { isCollapsed, setIsCollapsed, currentTabSelected,setCurrentTabSelected} = useContext(AdminContext)
 
     const selectTab = (tabSelected) => {
         setIsCollapsed(false)
