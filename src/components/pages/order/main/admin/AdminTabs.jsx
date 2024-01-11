@@ -10,16 +10,16 @@ export default function AdminTabs() {
     const { 
         isCollapsed, 
         setIsCollapsed, 
-        currentTabsSelected,
-        setCurrentTabsSelected
+        currentTabSelected,
+        setCurrentTabSelected
     } = useContext(AdminContext)
 
     const selectTab = (tabSelected) => {
         setIsCollapsed(false)
-        setCurrentTabsSelected(tabSelected)
+        setCurrentTabSelected(tabSelected)
     }
 
-    const tabs = getTabsConfig(currentTabsSelected)
+    const tabs = getTabsConfig(currentTabSelected)
     return (
         <AdminTabsStyled>
             <Tab 
@@ -31,7 +31,7 @@ export default function AdminTabs() {
                     label={tab.label} 
                     Icon={tab.Icon} 
                     onClick={() => {selectTab(tab.index)}} 
-                    className={tab.className}
+                    className={currentTabSelected === tab.index ? "is-active" : ""}
                 />
             ))}
         </AdminTabsStyled>
