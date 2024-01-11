@@ -12,4 +12,7 @@ export const AdminContext = createContext({
 
     isEditSelected: false,
     setIsEditSelected: () => {},
+    
+    currentTabsSelected: false,
+    setCurrentTabsSelected: () => {},
 });
