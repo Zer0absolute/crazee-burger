@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { theme } from "../../../../../theme";
+import { theme } from "../../../../../../theme";
 import { useContext } from "react";
-import { AdminContext } from "../../../../../context/AdminContext";
-import { getTabSelected, getTabsConfig } from "./getTabsConfig";
+import { AdminContext } from "../../../../../../context/AdminContext";
+import { getTabSelected, getTabsConfig } from "../getTabsConfig";
 
 export default function AdminPanel() {
     const { currentTabSelected } = useContext(AdminContext)
@@ -22,4 +22,5 @@ const AdminPanelStyled = styled.div`
     background: ${theme.colors.white};
     border: 1px solid ${theme.colors.greyLight};
     box-shadow: ${theme.shadows.subtle};
+    padding: 30px 5%;
 `;
