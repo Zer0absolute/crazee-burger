@@ -5,12 +5,20 @@ import Navbar from "./navbar/Navbar";
 import { useState } from "react";
 import Main from "./main/Main";
 import { AdminContext } from "../../../context/AdminContext";
+import { fakeMenu } from "../../../fakeData/fakeMenu";
 
 export default function OrderPage() {
     const { username } = useParams()
     const [ isModeAdmin, setIsModeAdmin] = useState(false)
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [currentTabSelected, setCurrentTabSelected] = useState("add")
+    const [menu, setMenu] = useState(fakeMenu.LARGE)
+    
+    const handleAddProduct = (newProduct) => {
+        const menuCopy = [...menu]
+        const menuUpdated = [newProduct,...menuCopy]
+        setMenu(menuUpdated)
+    }
 
     const adminContextValue = {
         isModeAdmin,
@@ -18,9 +26,11 @@ export default function OrderPage() {
         isCollapsed,
         setIsCollapsed,
         currentTabSelected,
-        setCurrentTabSelected
+        setCurrentTabSelected,
+        menu,
+        handleAddProduct
     };
-
+    
     return (
         <OrderPageStyled>
             <div className="container">

@@ -1,8 +1,24 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { AdminContext } from "../../../../../../context/AdminContext";
 
 export default function AddForm() {
+    const { handleAddProduct } = useContext(AdminContext)
+    
+    const newProduct = {
+        id : new Date().getTime(),
+        title : "new product",
+        imageSource : "https://img.freepik.com/vecteurs-premium/logo-burger-vecteur-illustration-dessin-anime-icone_23987-764.jpg?w=1480",
+        price : 2.5,
+    }
+
+    const handleSubmit = (event) => { 
+        event.preventDefault()
+        handleAddProduct(newProduct)
+    }
+
     return (
-        <AddFormStyled>
+        <AddFormStyled onSubmit={handleSubmit}>
             <div className="image-preview">
                 image
             </div>
