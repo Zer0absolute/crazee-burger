@@ -1,31 +1,47 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import { AdminContext } from "../../../../../../context/AdminContext";
 
 export default function AddForm() {
     const { handleAddProduct } = useContext(AdminContext)
+    const [title, setTitle] = useState("")
+    const [imageSource, setImageSource] = useState("")
+    const [price, setPrice] = useState(0)
     
     const newProduct = {
         id : new Date().getTime(),
-        title : "new product",
-        imageSource : "https://img.freepik.com/vecteurs-premium/logo-burger-vecteur-illustration-dessin-anime-icone_23987-764.jpg?w=1480",
-        price : 2.5,
+        title,
+        imageSource,
+        price,
     }
 
     const handleSubmit = (event) => { 
         event.preventDefault()
         handleAddProduct(newProduct)
+        setTitle("")
+        setImageSource("")
+        setPrice("")
+    }
+
+    const handleTitle = (event) => { 
+        setTitle(event.target.value)
+    }
+    const handleImage = (event) => { 
+        setImageSource(event.target.value)
+    }
+    const handlePrice = (event) => { 
+        setPrice(event.target.value)
     }
 
     return (
         <AddFormStyled onSubmit={handleSubmit}>
             <div className="image-preview">
-                image
+                Aucune image
             </div>
             <div className="input-fields">
-                <input type="Nom" placeholder="nom"/>
-                <input type="Nom" placeholder="image"/>
-                <input type="Nom" placeholder="prix"/>
+                <input value={title} type="Nom" placeholder="nom" onChange={handleTitle}/>
+                <input value={imageSource} type="Nom" placeholder="image" onChange={handleImage}/>
+                <input value={price ? price : ""} type="Nom" placeholder="prix" onChange={handlePrice}/>
             </div>
             <button className="submit-button">
                 Submit-button
