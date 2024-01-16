@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
 import { AdminContext } from "../../../../../../context/AdminContext";
+import {FiCheck} from "react-icons/fi";
 
 const EMPTY_PRODUCT = {
     id: "",
@@ -12,6 +13,7 @@ const EMPTY_PRODUCT = {
 export default function AddForm() {
     const { handleAddProduct } = useContext(AdminContext)
     const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
+    const [isSubmitted, setIsSubmitted] = useState(false)
     
     const handleSubmit = (event) => { 
         event.preventDefault()
@@ -21,6 +23,14 @@ export default function AddForm() {
         }
         handleAddProduct(newProductToAdd)
         setNewProduct(EMPTY_PRODUCT)
+        displaySuccessMessage()
+    }
+
+    const displaySuccessMessage = () => {
+        setIsSubmitted(true)
+        setTimeout(() => {
+            setIsSubmitted(false)
+        }, 2500)
     }
 
     const handleChange = (event) => {
@@ -52,9 +62,15 @@ export default function AddForm() {
                     onChange={handleChange}
                 />
             </div>
-            <button className="submit-button">
-                Submit-button
-            </button>
+            <div className="submit">
+                <button className="submit-button">
+                    Submit-button
+                </button>
+                {isSubmitted && <div className="submit-message">
+                    <FiCheck />
+                    <span>Ajouté avec succès !</span>
+                </div>}
+            </div>
         </AddFormStyled>
     )
 }
@@ -68,6 +84,7 @@ const AddFormStyled = styled.form`
     width: 70%;
     
     .image-preview {
+        background: purple;
         grid-area: 1 / 1 / 4 / 2;
         display: flex;
         align-items: center;
@@ -87,9 +104,18 @@ const AddFormStyled = styled.form`
         display: grid;
     }
 
-    .submit-button {
+    .submit {
         background: yellow;
         grid-area: 4 / -2 / -1 / -1;
-        width: 50%;
+        display: flex;
+        align-items: center;
+
+        .submit-button {
+            width: 50%;
+        }
+
+        .submit-message {
+            border: 1px solid red;
+        }
     }
 `;
