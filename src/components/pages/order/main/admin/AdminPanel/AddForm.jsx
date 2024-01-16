@@ -20,6 +20,7 @@ export default function AddForm() {
             ...newProduct
         }
         handleAddProduct(newProductToAdd)
+        setNewProduct(EMPTY_PRODUCT)
     }
 
     const handleChange = (event) => {
@@ -32,22 +33,22 @@ export default function AddForm() {
                 <input 
                     name="title"
                     value={newProduct.title} 
-                    type="Nom" 
-                    placeholder="nom" 
+                    type="text" 
+                    placeholder="Nom du produit (ex: Super Burger)" 
                     onChange={handleChange}
                     />
                 <input 
                     name="imageSource" 
                     value={newProduct.imageSource} 
-                    type="Nom" 
-                    placeholder="image" 
+                    type="text" 
+                    placeholder="Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)" 
                     onChange={handleChange}
                 />
                 <input 
                     name="price" 
                     value={newProduct.price ? newProduct.price : ""} 
-                    type="Nom" 
-                    placeholder="prix" 
+                    type="number" 
+                    placeholder="Prix" 
                     onChange={handleChange}
                 />
             </div>
