@@ -22,10 +22,11 @@ export default function AdminTabs() {
                 onClick={() => setIsCollapsed(!isCollapsed)} 
                 className={isCollapsed ? "is-active" : ""}
             />
-            {tabs.map((tab) => (<Tab 
-                    label={tab.label} 
-                    Icon={tab.Icon} 
-                    onClick={() => {selectTab(tab.index)}} 
+            {tabs.map((tab) => (<Tab
+                    key={tab.index}
+                    label={tab.label}
+                    Icon={tab.Icon}
+                    onClick={() => { selectTab(tab.index) }}
                     className={currentTabSelected === tab.index ? "is-active" : ""}
                 />
             ))}
