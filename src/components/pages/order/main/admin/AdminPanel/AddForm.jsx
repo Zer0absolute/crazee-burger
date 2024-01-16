@@ -6,7 +6,7 @@ const EMPTY_PRODUCT = {
     id: "",
     title: "",
     imageSource: "",
-    price: 14,
+    price: 0,
 }
 
 export default function AddForm() {
@@ -16,7 +16,7 @@ export default function AddForm() {
     const handleSubmit = (event) => { 
         event.preventDefault()
         const newProductToAdd = {
-            id : new Date().getTime(),
+            id : crypto.randomUUID(),
             ...newProduct
         }
         handleAddProduct(newProductToAdd)
