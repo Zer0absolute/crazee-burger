@@ -23,9 +23,7 @@ export default function AddForm() {
     }
 
     const handleChange = (event) => {
-        const newValue = event.target.value
-        const name = event.target.name
-        setNewProduct({...newProduct, [name]:newValue})
+        setNewProduct({...newProduct, [event.target.name]:event.target.value})
     }
     return (
         <AddFormStyled onSubmit={handleSubmit}>

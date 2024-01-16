@@ -5,6 +5,8 @@ import { formatPrice } from "../../../../utils/maths"
 import { useContext } from 'react';
 import { AdminContext } from '../../../../context/AdminContext';
 
+const IMAGE_BY_DEFAULT = "../../../../../public/images/coming-soon.png"
+
 export default function Menu() {
 
     const { menu } = useContext(AdminContext)
@@ -12,7 +14,7 @@ export default function Menu() {
     return (
         <MenuStyled>
             {menu.map(({id, title, imageSource, price}) => {
-                return <Card key={id} title={title} imageSource={imageSource} leftDescription={formatPrice(price)}></Card>
+                return <Card key={id} title={title} imageSource={imageSource ? imageSource : IMAGE_BY_DEFAULT} leftDescription={formatPrice(price)}></Card>
             })}
         </MenuStyled>
     )
