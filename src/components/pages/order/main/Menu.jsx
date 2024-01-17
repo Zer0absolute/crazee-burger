@@ -9,7 +9,7 @@ const IMAGE_BY_DEFAULT = "../../../../../public/images/coming-soon.png"
 
 export default function Menu() {
 
-    const { menu } = useContext(AdminContext)
+    const { menu, isModeAdmin } = useContext(AdminContext)
 
     return (
         <MenuStyled>
@@ -20,6 +20,7 @@ export default function Menu() {
                         title={title} 
                         imageSource={imageSource ? imageSource : IMAGE_BY_DEFAULT} 
                         leftDescription={formatPrice(price)}
+                        hasDeleteButton={isModeAdmin}
                     />
                 )
             })}

@@ -4,12 +4,12 @@ import TextInfo from "./TextInfo";
 import Image from "./Image";
 import { TiDelete } from "react-icons/ti"
 
-export default function Card({ title, imageSource, leftDescription }) {
+export default function Card({ title, imageSource, leftDescription, hasDeleteButton }) {
     return (
         <CardStyled>
-            <button className="delete-button" aria-label="delete-button">
+            {hasDeleteButton && <button className="delete-button" aria-label="delete-button">
                 <TiDelete/>
-            </button>
+            </button>}
             <Image imageSource={imageSource} title={title}/>
             <TextInfo title={title} leftDescription={leftDescription}/>
         </CardStyled>
