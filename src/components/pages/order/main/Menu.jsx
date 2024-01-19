@@ -9,7 +9,13 @@ const IMAGE_BY_DEFAULT = "../../../../../public/images/coming-soon.png"
 
 export default function Menu() {
 
-    const { menu, isModeAdmin, handleDelete } = useContext(AdminContext)
+    const { menu, isModeAdmin, handleDelete, resetMenu } = useContext(AdminContext)
+
+    if(menu.length === 0) return <div>
+        <span>Le menu est vide ?<br /></span>
+        <span>Cliquez ci-dessous pour le réinitialiser<br /></span>
+        <button onClick={resetMenu}>Générer de nouveaux produits</button>
+    </div>
 
     return (
         <MenuStyled>
