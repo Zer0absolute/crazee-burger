@@ -4,10 +4,10 @@ import TextInfo from "./TextInfo";
 import Image from "./Image";
 import { TiDelete } from "react-icons/ti"
 
-export default function Card({ title, imageSource, leftDescription, hasDeleteButton }) {
+export default function Card({ title, imageSource, leftDescription, hasDeleteButton, onDelete }) {
     return (
         <CardStyled>
-            {hasDeleteButton && <button className="delete-button" aria-label="delete-button">
+            {hasDeleteButton && <button className="delete-button" aria-label="delete-button" onClick={onDelete}>
                 <TiDelete/>
             </button>}
             <Image imageSource={imageSource} title={title}/>

@@ -20,6 +20,12 @@ export default function OrderPage() {
         setMenu(menuUpdated)
     }
 
+    const handleDelete = (productId) => {
+        const menuCopy = [...menu]
+        const menuUpdated = menuCopy.filter((product) => product.id !== productId)
+        setMenu(menuUpdated)
+    }
+
     const adminContextValue = {
         isModeAdmin,
         setIsModeAdmin,
@@ -28,7 +34,8 @@ export default function OrderPage() {
         currentTabSelected,
         setCurrentTabSelected,
         menu,
-        handleAddProduct
+        handleAddProduct,
+        handleDelete
     };
     
     return (
