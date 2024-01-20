@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 import {FiCheck} from "react-icons/fi";
 import { AdminContext } from "../../../../../../../context/AdminContext";
+import { theme } from "../../../../../../../theme/index.jsx";
 
 const EMPTY_PRODUCT = {
     id: "",
@@ -38,7 +39,7 @@ export default function AddForm() {
     }
     return (
         <AddFormStyled onSubmit={handleSubmit}>
-            <div className="image-preview">{newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div>Aucune image</div>}</div>
+            <div className="image-preview">{newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div className="empty-image">Aucune image</div>}</div>
             <div className="input-fields">
                 <input 
                     name="title"
@@ -76,15 +77,15 @@ export default function AddForm() {
 }
 
 const AddFormStyled = styled.form`
-    background: red;
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 8px;
     height: 100%;
     width: 70%;
     
     .image-preview {
-        background: purple;
         grid-area: 1 / 1 / 4 / 2;
         display: flex;
         align-items: center;
@@ -95,6 +96,20 @@ const AddFormStyled = styled.form`
             height: 100%;
             object-fit: contain;
             object-position: center;
+        }
+
+        .empty-image {
+            display: flex;
+            line-height: 1.5;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border: 1px solid ${theme.colors.greyLight};
+            border-radius: ${theme.borderRadius.round};
+            color: ${theme.colors.greySemiDark};
+            font-size: ${theme.fonts.size.P0};
+        
         }
     }
 
