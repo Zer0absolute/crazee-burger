@@ -1,9 +1,11 @@
 import styled from 'styled-components';
-import { theme } from '../../../../../theme';
-import Card from '../../../../reusable-ui/Card/Card';
-import { formatPrice } from "../../../../../utils/maths"
+import { theme } from '../../../../../../theme';
+import Card from '../../../../../reusable-ui/Card/Card';
+import { formatPrice } from "../../../../../../utils/maths"
 import { useContext } from 'react';
-import { AdminContext } from '../../../../../context/AdminContext';
+import { AdminContext } from '../../../../../../context/AdminContext';
+import EmptyMenuAdmin from './EmptyMenuAdmin';
+import EmptyMenuClient from './EmptyMenuClient';
 
 const IMAGE_BY_DEFAULT = "../../../../../public/images/coming-soon.png"
 
@@ -11,11 +13,10 @@ export default function Menu() {
 
     const { menu, isModeAdmin, handleDelete, resetMenu } = useContext(AdminContext)
 
-    if(menu.length === 0) return <div>
-        <span>Le menu est vide ?<br /></span>
-        <span>Cliquez ci-dessous pour le réinitialiser<br /></span>
-        <button onClick={resetMenu}>Générer de nouveaux produits</button>
-    </div>
+    if(menu.length === 0) {
+        if(!isModeAdmin) return <EmptyMenuClient />
+        return isModeAdmin && <EmptyMenuAdmin onReset={resetMenu}/>
+    }
 
     return (
         <MenuStyled>
