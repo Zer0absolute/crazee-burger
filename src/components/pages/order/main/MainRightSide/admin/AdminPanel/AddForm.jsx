@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import { AdminContext } from "../../../../../../context/AdminContext";
 import {FiCheck} from "react-icons/fi";
+import { AdminContext } from "../../../../../../../context/AdminContext";
 
 const EMPTY_PRODUCT = {
     id: "",

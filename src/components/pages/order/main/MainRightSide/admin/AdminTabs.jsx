@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import Tab from "./Tab";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { theme } from "../../../../../theme";
 import { useContext } from "react";
-import { AdminContext } from "../../../../../context/AdminContext";
 import { getTabsConfig } from "./getTabsConfig";
+import { AdminContext } from "../../../../../../context/AdminContext";
+import { theme } from "../../../../../../theme";
 
 export default function AdminTabs() {
     const { isCollapsed, setIsCollapsed, currentTabSelected,setCurrentTabSelected} = useContext(AdminContext)

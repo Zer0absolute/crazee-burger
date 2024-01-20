@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { theme } from '../../../../theme';
-import Card from '../../../reusable-ui/Card/Card';
-import { formatPrice } from "../../../../utils/maths"
+import { theme } from '../../../../../theme';
+import Card from '../../../../reusable-ui/Card/Card';
+import { formatPrice } from "../../../../../utils/maths"
 import { useContext } from 'react';
-import { AdminContext } from '../../../../context/AdminContext';
+import { AdminContext } from '../../../../../context/AdminContext';
 
 const IMAGE_BY_DEFAULT = "../../../../../public/images/coming-soon.png"
 
