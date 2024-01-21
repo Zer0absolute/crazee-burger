@@ -5,7 +5,7 @@ export default function TextInput({ value, onChange, Icon, ...extraProps }) {
     
     return (
         <TextInputStyled>
-            {Icon && Icon}
+            <div className="icon">{Icon && Icon}</div>
             <input
                 value={value}
                 onChange={onChange}
@@ -20,11 +20,11 @@ const TextInputStyled = styled.div`
     width: 100%;
     position: relative;
 
-    .Icon {
+    .icon {
         position: absolute;
-        color: #747B91;
+        color: ${theme.colors.greySemiDark};
         left: 24px;
-        bottom: 20px;
+        bottom: 16px;
     }
 
     input { 

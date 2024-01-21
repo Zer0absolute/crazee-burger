@@ -34,13 +34,13 @@ export default function LoginForm() {
                     value={inputValue} 
                     onChange={handleChange} 
                     placeholder={'Entrez votre prénom'}
-                    Icon={<BsPersonCircle className='Icon'/>}
+                    Icon={<BsPersonCircle />}
                     required 
                 />
                 <div className="primary-button">
                     <PrimaryButton
                         label={"Accéder à mon espace"}
-                        Icon={<IoIosArrowForward className='icon-button'/>}
+                        Icon={<IoIosArrowForward />}
                     />
                 </div>
             </div>
@@ -82,10 +82,6 @@ const LoginFormStyled = styled.form`
         flex-direction: column;
         gap: 12.8px;
 
-        .icon-button { 
-            margin-left: 10px;
-            margin-bottom: -3.5px;
-        }
         .primary-button {
             width: 400px;
             height: 55px;
