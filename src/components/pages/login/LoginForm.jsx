@@ -34,13 +34,15 @@ export default function LoginForm() {
                     value={inputValue} 
                     onChange={handleChange} 
                     placeholder={'Entrez votre prénom'}
-                    Icon={<BsPersonCircle className='Icon'/>}
+                    Icon={<BsPersonCircle />}
+                    version="normal"
                     required 
                 />
                 <div className="primary-button">
                     <PrimaryButton
                         label={"Accéder à mon espace"}
-                        Icon={<IoIosArrowForward className='icon-button'/>}
+                        Icon={<IoIosArrowForward />}
+                        version={"normal"}
                     />
                 </div>
             </div>
@@ -57,7 +59,7 @@ const LoginFormStyled = styled.form`
     h1, h2 { 
         font-family: Amatic SC;
         text-align: center;
-        font-weight: ${theme.weights.bold}
+        font-weight: ${theme.fonts.weights.bold}
     }
 
     h1 {
@@ -82,10 +84,6 @@ const LoginFormStyled = styled.form`
         flex-direction: column;
         gap: 12.8px;
 
-        .icon-button { 
-            margin-left: 10px;
-            margin-bottom: -3.5px;
-        }
         .primary-button {
             width: 400px;
             height: 55px;

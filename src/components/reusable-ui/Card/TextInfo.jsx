@@ -9,7 +9,7 @@ export default function TextInfo({ title, leftDescription }) {
             <div className="left-description">
                 {leftDescription}
                 <div className="right-description">
-                    <PrimaryButton className="primary-button" label="Ajouter" />
+                    <PrimaryButton className="primary-button" label="Ajouter" version="normal"/>
                 </div>
             </div>
         </TextInfoStyled>
@@ -21,9 +21,9 @@ const TextInfoStyled = styled.div`
     height: 110px;
     
     .title {
-        font-size: ${theme.fonts.P4};
+        font-size: ${theme.fonts.size.P4};
         font-family: Amatic SC;
-        font-weight: ${theme.weights.bold};
+        font-weight: ${theme.fonts.weights.bold};
         padding: 0px, 5px, 5px, 5px;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -41,8 +41,8 @@ const TextInfoStyled = styled.div`
         .right-description {
             width: 90px;
             height: 38px;
-            font-weight: ${theme.weights.bold};
-            font-size: ${theme.fonts.XS};
+            font-weight: ${theme.fonts.weights.bold};
+            font-size: ${theme.fonts.size.XS};
         }
     }
 `;

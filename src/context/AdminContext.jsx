@@ -9,4 +9,13 @@ export const AdminContext = createContext({
     
     currentTabSelected: false,
     setCurrentTabSelected: () => {},
+    
+    menu: [],
+    handleAddProduct: () => {},
+
+    handleDelete: () => {},
+    resetMenu: () => {},
+
+    NewProduct: [],
+    setNewProduct: () => {},
 });
