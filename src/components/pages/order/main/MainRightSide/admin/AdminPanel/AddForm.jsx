@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import { FiCheck } from "react-icons/fi";
 import { FaHamburger } from "react-icons/fa"
 import { BsFillCameraFill } from "react-icons/bs"
 import { MdOutlineEuro } from "react-icons/md"
 import { AdminContext } from "../../../../../../../context/AdminContext";
-import { theme } from "../../../../../../../theme/index.jsx";
 import TextInput from "../../../../../../reusable-ui/TextInput.jsx";
 import PrimaryButton from "../../../../../../reusable-ui/PrimaryButton.jsx";
 import ImagePreview from "./ImagePreview.jsx";
+import SubmitMessage from "./SubmitMessage.jsx";
 
 const EMPTY_PRODUCT = {
     id: "",
@@ -55,7 +54,7 @@ export default function AddForm() {
                     onChange={handleChange}
                     Icon={<FaHamburger />}
                     version="minimalist"
-                    />
+                />
                 <TextInput 
                     name="imageSource" 
                     value={newProduct.imageSource} 
@@ -78,10 +77,7 @@ export default function AddForm() {
                     label={"Ajouter un nouveau produit au menu"}
                     version="success"
                 />
-                {isSubmitted && <div className="submit-message">
-                    <FiCheck className="icon"/>
-                    <span className="message">Ajouté avec succès !</span>
-                </div>}
+                {isSubmitted && <SubmitMessage />}
             </div>
         </AddFormStyled>
     )
@@ -106,25 +102,5 @@ const AddFormStyled = styled.form`
         grid-area: 4 / -2 / -1 / -1;
         display: flex;
         align-items: center;
-
-        .submit-message {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: ${theme.colors.success};
-            margin-left: 15px;
-
-            .icon {
-                border-radius: ${theme.borderRadius.circle};
-                border: 1px solid ;
-                margin-right: 5px;
-                width: 1em;
-                height: 1em;
-            }
-
-            .message {
-                font-size: ${theme.fonts.size.SM};
-            }
-        }
     }
 `;
