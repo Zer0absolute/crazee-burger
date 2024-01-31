@@ -44,7 +44,7 @@ const CardStyled = styled.div`
         color: ${theme.colors.primary};
 
         &:hover {
-            color: red;
+            color: ${theme.colors.red};
         }
 
         &:active {

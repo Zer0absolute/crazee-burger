@@ -10,17 +10,16 @@ export default function ImagePreview({ imageSource, title }) {
 }
 
 const ImagePreviewStyled = styled.div`
-    grid-area: 1 / 1 / 4 / 2;
+    grid-area: 1 / 1 / 5 / 2;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
         object-position: center;
-        margin-top: 50px;
     }
 
     .empty-image {
@@ -28,9 +27,8 @@ const ImagePreviewStyled = styled.div`
         line-height: 1.5;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 200px;
-        margin-top: 50px;
+        width: 100%;
+        height: 100%;
         border: 1px solid ${theme.colors.greyLight};
         border-radius: ${theme.borderRadius.round};
         color: ${theme.colors.greySemiDark};

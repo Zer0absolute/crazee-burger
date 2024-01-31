@@ -7,7 +7,7 @@ import { AdminContext } from '../../../../../../context/AdminContext';
 import EmptyMenuAdmin from './EmptyMenuAdmin';
 import EmptyMenuClient from './EmptyMenuClient';
 
-const IMAGE_BY_DEFAULT = "../../../../../public/images/coming-soon.png"
+const IMAGE_BY_DEFAULT = "/images/coming-soon.png"
 
 export default function Menu() {
 
