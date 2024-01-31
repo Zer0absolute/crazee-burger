@@ -16,10 +16,11 @@ const ImagePreviewStyled = styled.div`
     justify-content: center;
 
     img {
-        width: 100%;
-        height: 100%;
+        width: 200px;
+        height: 200px;
         object-fit: contain;
         object-position: center;
+        margin-top: 50px;
     }
 
     .empty-image {
@@ -27,8 +28,9 @@ const ImagePreviewStyled = styled.div`
         line-height: 1.5;
         justify-content: center;
         align-items: center;
-        height: 100%;
-        width: 100%;
+        width: 200px;
+        height: 200px;
+        margin-top: 50px;
         border: 1px solid ${theme.colors.greyLight};
         border-radius: ${theme.borderRadius.round};
         color: ${theme.colors.greySemiDark};
