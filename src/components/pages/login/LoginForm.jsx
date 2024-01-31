@@ -42,6 +42,7 @@ export default function LoginForm() {
                     <PrimaryButton
                         label={"Accéder à mon espace"}
                         Icon={<IoIosArrowForward />}
+                        version={"normal"}
                     />
                 </div>
             </div>

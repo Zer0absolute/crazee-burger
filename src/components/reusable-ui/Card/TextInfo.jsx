@@ -9,7 +9,7 @@ export default function TextInfo({ title, leftDescription }) {
             <div className="left-description">
                 {leftDescription}
                 <div className="right-description">
-                    <PrimaryButton className="primary-button" label="Ajouter" />
+                    <PrimaryButton className="primary-button" label="Ajouter" version="normal"/>
                 </div>
             </div>
         </TextInfoStyled>
