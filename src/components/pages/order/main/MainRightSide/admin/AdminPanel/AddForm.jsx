@@ -7,7 +7,7 @@ import ImagePreview from "./ImagePreview.jsx";
 import SubmitMessage from "./SubmitMessage.jsx";
 import { getInputTextsConfig } from "./inputTextConfig"
 
-const EMPTY_PRODUCT = {
+export const EMPTY_PRODUCT = {
     id: "",
     title: "",
     imageSource: "",
@@ -15,8 +15,7 @@ const EMPTY_PRODUCT = {
 }
 
 export default function AddForm() {
-    const { handleAddProduct } = useContext(AdminContext)
-    const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
+    const { handleAddProduct, newProduct, setNewProduct } = useContext(AdminContext)
     const [isSubmitted, setIsSubmitted] = useState(false)
     
     const handleSubmit = (event) => {

@@ -15,4 +15,7 @@ export const AdminContext = createContext({
 
     handleDelete: () => {},
     resetMenu: () => {},
+
+    NewProduct: [],
+    setNewProduct: () => {},
 });
