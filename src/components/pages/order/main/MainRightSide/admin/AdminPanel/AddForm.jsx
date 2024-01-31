@@ -8,6 +8,7 @@ import { AdminContext } from "../../../../../../../context/AdminContext";
 import { theme } from "../../../../../../../theme/index.jsx";
 import TextInput from "../../../../../../reusable-ui/TextInput.jsx";
 import PrimaryButton from "../../../../../../reusable-ui/PrimaryButton.jsx";
+import ImagePreview from "./ImagePreview.jsx";
 
 const EMPTY_PRODUCT = {
     id: "",
@@ -45,7 +46,7 @@ export default function AddForm() {
     }
     return (
         <AddFormStyled onSubmit={handleSubmit}>
-            <div className="image-preview">{newProduct.imageSource ? <img src={newProduct.imageSource} alt={newProduct.title} /> : <div className="empty-image">Aucune image</div>}</div>
+            <ImagePreview imageSource={newProduct.imageSource} title={newProduct.title}/>
             <div className="input-fields">
                 <TextInput 
                     name="title"
@@ -94,33 +95,6 @@ const AddFormStyled = styled.form`
     grid-row-gap: 8px;
     height: 100%;
     width: 70%;
-    
-    .image-preview {
-        grid-area: 1 / 1 / 4 / 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-        }
-
-        .empty-image {
-            display: flex;
-            line-height: 1.5;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            border: 1px solid ${theme.colors.greyLight};
-            border-radius: ${theme.borderRadius.round};
-            color: ${theme.colors.greySemiDark};
-            font-size: ${theme.fonts.size.P0};
-        }
-    }
 
     .input-fields {
         grid-area: 1 / 2 / -2 / 3;
